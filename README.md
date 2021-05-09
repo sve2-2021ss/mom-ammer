@@ -12,9 +12,10 @@ Yes, the only way data can be produced and consumed from an Amazon MSK cluster i
 There are solutions to bypass this problem ([VPC Peering, Direct Connect, VPN](https://docs.aws.amazon.com/msk/latest/developerguide/client-access.html) or [Elastic IPs](https://repetitive.it/aws-msk-how-to-expose-the-cluster-on-the-public-network/?lang=en)) but these approaches are either too much overhead for such a demo project or not easy to automate. Another downside is that MSK does not support auto-scaling for brokers but only for storage.
 
 To mitigate these challenges the [Confluent](https://www.confluent.io) cloud was used which allows connections through local clients, provides better documentation for client SDKs and also offers the following features:
-* Scheme Registry: This registry manages schemas that define how data is structured in Kafka messages.
-* ksqlDB: ksqlDB is an event streaming database purpose-built to help developers create stream processing applications on top of Apache Kafka.
-* Connectors: Confluent offers pre-built, Kafka Connectors that make it easy to instantly connect to popular data sources and sinks.
+* Scheme Registry: Registry that manages schemas that define how data is structured in Kafka messages.
+* ksqlDB: An event streaming database purpose-built to help developers create stream processing applications on top of Apache Kafka.
+* Connectors: Pre-built, Kafka Connectors that make it easy to instantly connect to popular data sources and sinks.
+* Kafka Connect: A framework for connecting Apache Kafka with external systems such as databases, key-value stores, search indexes, and file systems.
 
 ## 🚩 Goal
 
@@ -53,7 +54,15 @@ make run
 
 ## Resume
 
-* **analytics**:
-* **feeder**:
-* **visualization**:
+The switch from AWS MSK to Confluent increased the development speed immediately. Confluent itself relies on cloud providers like AWS, Azure or GCP but abstracts away the network infrastructure and offers an easy-to-use UI, API and framework. For instance, the data flow of the application can be easily viewed which helps to find errors in the pipeline: 
+
+![](.github/data-flow.png)
+
+### Producer
+See [README analytics](./analytics/README.md)
+
+### Consumer
+See [README feeder](./feeder/README.md)
+
+To summarize all the mentioned points it can be said that Confluent has a much lower learning curve for developers and makes it easy to get started with Kafka. AWS MSK on the hand is more flexible because you define things like security groups or availability zones for yourself but does not offer a public endpoint at the time of this writing.
 
