@@ -1,0 +1,5 @@
+certifi
+confluent-kafka[avro,json,protobuf]~=1.6.1
+fastapi~=0.63.0
+requests
+uvicorn[standard]~=0.13.4
