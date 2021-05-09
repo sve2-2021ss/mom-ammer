@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/analytics/analytics.iml" filepath="$PROJECT_DIR$/analytics/analytics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/feeder/feeder.iml" filepath="$PROJECT_DIR$/feeder/feeder.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/mom-ammer.iml" filepath="$PROJECT_DIR$/.idea/mom-ammer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/visualization/visualization.iml" filepath="$PROJECT_DIR$/visualization/visualization.iml" />
     </modules>
   </component>
 </project>
